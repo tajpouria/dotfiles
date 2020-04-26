@@ -26,7 +26,9 @@ Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 
-nmap <C-S-i> <Plug>(Prettier)
+map <C-S-i> <Plug>(Prettier)
+let g:prettier#quickfix_enabled = 0
+let g:prettier#quickfix_auto_focus = 0
 
 syntax enable
 set background=dark
@@ -76,7 +78,7 @@ inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<
 nmap <F2> <Plug>(coc-rename)
 
 "nerdtree
-nmap <C-b> :NERDTreeToggle<CR>
+nmap <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['^node_modules$']
 
 "comments
@@ -92,5 +94,5 @@ vmap <F6> :!xclip -f -sel clip<CR>
 map <F7> :-1r !xclip -o -sel clip<CR>
 
 "multi_cursor
-let g:multi_cursor_start_word_key      = '<C-n>'
-let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_word_key      = '<C-m>'
+let g:multi_cursor_select_all_word_key = '<A-m>'
