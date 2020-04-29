@@ -32,7 +32,7 @@ let g:prettier#quickfix_auto_focus = 0
 
 syntax enable
 set background=dark
-colorscheme gruvbox
+colorscheme gruvbox 
 
 " ctrlp ignores the file that ignored by git
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -80,6 +80,7 @@ nmap <F2> <Plug>(coc-rename)
 "nerdtree
 nmap <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['^node_modules$']
+let NERDTreeShowHidden=1
 
 "comments
 vmap <C-c> <plug>NERDCommenterToggle
