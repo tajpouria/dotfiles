@@ -43,7 +43,7 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-tsserver',
   \ 'coc-json',
-  \ 'coc-pairs',
+  \ 'coc-css'
   \ ]
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -78,7 +78,7 @@ inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<
 nmap <F2> <Plug>(coc-rename)
 
 "nerdtree
-nmap <C-n> :NERDTreeToggle<CR>
+nmap <A-b> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['^node_modules$']
 let NERDTreeShowHidden=1
 
@@ -95,5 +95,5 @@ vmap <F6> :!xclip -f -sel clip<CR>
 map <F7> :-1r !xclip -o -sel clip<CR>
 
 "multi_cursor
-let g:multi_cursor_start_word_key      = '<C-m>'
-let g:multi_cursor_select_all_word_key = '<A-m>'
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
