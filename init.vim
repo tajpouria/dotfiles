@@ -6,14 +6,14 @@ set mouse=a
 set formatoptions=cro "disable continuation of comments to the next line
 set guicursor=
 
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'mxw/vim-jsx' " JSX Syntax
 Plug 'pangloss/vim-javascript' " JS Syntax
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Python Syntax
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'morhetz/gruvbox'
+Plug 'https://github.com/joshdick/onedark.vim'
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
@@ -22,17 +22,16 @@ Plug 'preservim/nerdcommenter'
 Plug 'https://github.com/heavenshell/vim-jsdoc'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
-
 
 map <C-S-i> <Plug>(Prettier)
 let g:prettier#quickfix_enabled = 0
 let g:prettier#quickfix_auto_focus = 0
 
 syntax enable
-set background=dark
-colorscheme gruvbox 
+colorscheme onedark 
 
 " ctrlp ignores the file that ignored by git
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -43,7 +42,8 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-tsserver',
   \ 'coc-json',
-  \ 'coc-css'
+  \ 'coc-css',
+  \ 'coc-python'
   \ ]
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -97,3 +97,7 @@ map <F7> :-1r !xclip -o -sel clip<CR>
 "multi_cursor
 let g:multi_cursor_start_word_key      = '<C-n>'
 let g:multi_cursor_select_all_word_key = '<A-n>'
+
+" indentLine
+let g:indentLine_leadingSpaceChar='·'
+let g:indentLine_leadingSpaceEnabled='1'
