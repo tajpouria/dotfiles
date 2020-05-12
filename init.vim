@@ -43,7 +43,8 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-json',
   \ 'coc-css',
-  \ 'coc-python'
+  \ 'coc-python',
+  \ 'https://github.com/xabikos/vscode-javascript'
   \ ]
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
