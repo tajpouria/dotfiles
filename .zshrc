@@ -71,10 +71,8 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-plugins=(zsh-autosuggestions)
+plugins=(git zsh-autosuggestions)
 bindkey '^ ' autosuggest-accept
-
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,6 +130,10 @@ export NVM_DIR="$HOME/.nvm"
 # tmux
 alias tmux="TERM=xterm-256color tmux"
 
-# My laptop have problem in for suspendending
+# My laptop have problem in for suspending
 alias sudosh="sudo sh -c 'echo EHC1 > /proc/acpi/wakeup;echo EHC2 > /proc/acpi/wakeup;echo XHC > /proc/acpi/wakeup'"
 
+# K8s
+source <(kubectl completion zsh)
+alias k=kubectl
+complete -F __start_kubectl k
